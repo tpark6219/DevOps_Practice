@@ -1,0 +1,46 @@
+---
+- hosts: aws
+  become: yes
+  gather_facts: no
+
+  tasks:
+    - name: Install dependencies
+      yum: name={{ item }} state=installed
+      with_items:
+        - MySQL-python
+        - python-pip
+
+    - name: Install mySQL database
+      yum: name={{ item }} state=installed
+      with_items:
+         - mariadb-server
+         - mariadb-libs
+         - mariadb
+    - name: Start mySQL Service
+      service:
+        name: mariadb
+        state: started
+        enabled: yes
+
+    - name: Create Application Database
+      mysql_db: name=shop state=present
+
+    - name: Create Database ansible_user
+      mysql_user:
+        name: tjp135
+        password: '12345'
+        priv: '*.*:ALL'
+        state: present
+        host: '%'
+
+    - name: Install Python Flask dependency
+      pip:
+         name: "{{item}}"
+      with_items:
+          - flask
+          - flask-mysql
+    - name: copy source code
+      copy: src=app.py dest=/home/ec2-user
+
+    - name: start web server
+      shell: FLASK_APP=app.py nohup flask run --host=0.0.0.0 &
