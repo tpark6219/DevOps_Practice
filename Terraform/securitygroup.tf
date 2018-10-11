@@ -1,7 +1,7 @@
 resource "aws_security_group" "allow" {
   vpc_id = "${aws_vpc.main-stage.id}"
   name = "allow"
-  description = ""
+  description = "Allow Http/Https and SSH"
   ingress {
     from_port = 5000
     to_port = 5000
