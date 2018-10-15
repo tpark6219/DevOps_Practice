@@ -1,0 +1,22 @@
+      - name: Install mySQL database
+        yum: name={{ item }} state=installed
+        with_items:
+           - mariadb-server
+           - mariadb-libs
+           - mariadb
+      - name: Start mySQL Service
+        service:
+          name: mariadb
+          state: started
+          enabled: yes
+
+      - name: Create Application Database
+        mysql_db: name=shop state=present
+
+      - name: Create Database ansible_user
+        mysql_user:
+          name: "{{ db_user }}"
+          password: " {{db_user_password}}"
+          priv: '*.*:ALL'
+          state: present
+          host: 'localhost'

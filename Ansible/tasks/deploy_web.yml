@@ -1,0 +1,11 @@
+    - name: Install Python Flask dependency
+      pip:
+         name: "{{item}}"
+      with_items:
+          - flask
+          - flask-mysql
+    - name: copy source code
+      copy: src=app.py dest=/home/user      #/home/ec2-user for AWS
+
+    - name: start web server
+      shell: FLASK_APP=/home/user/app.py nohup flask run --host=0.0.0.0 &
