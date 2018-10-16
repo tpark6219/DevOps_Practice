@@ -1,5 +1,5 @@
 [group_A]
-52.91.176.173 ansible_user=user ansible_password=17N998tim ansible_sudo_pass=17N998tim
+52.91.176.173 ansible_user=user ansible_password=123456 ansible_sudo_pass=123456
 
 [group_B]
-54.242.92.170 ansible_user=user ansible_password=17N998tim ansible_sudo_pass=17N998tim
+54.242.92.170 ansible_user=user ansible_password=123456 ansible_sudo_pass=123456
