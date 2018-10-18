@@ -16,4 +16,4 @@ app = Flask(__name__)
 def main():
     return "Hello (Change 3**)"
 if __name__ == "__main__":
-    app.run()
+    app.run(debug = True)
