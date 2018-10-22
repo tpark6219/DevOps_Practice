@@ -8,7 +8,7 @@ These are the tools that will be used to setup this test environment. Other tool
 
 ### Terraform 
 
-Terraform will be used to get the moving parts needed to host the python application. You will need an AWS account with aws credentials. You will also need to generate a key pair (https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html).
+Terraform will be used to get the moving parts needed to host a very simple python application. You will need an AWS account with aws credentials. You will also need to generate a key pair (https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html).
 
 ```
 cat ~/.aws/credentials
