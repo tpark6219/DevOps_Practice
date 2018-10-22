@@ -24,12 +24,12 @@ terraform apply
 ```
 
 This will setup a private VPC(Staging Environment), with 3 public subnets and 3 private subnets to build a robust environment. 
-Only 1 public subnet will be used for the python application. This also includes a security group that allows ssh, http/https and port 5000 from any I.P Address. 
+Only 1 public subnet will be used for the python application. This also includes a security group that allows ssh, http/https and port 5000 from any IP Address. 
 
 ### Ansible
 
 Ansible will be used to install all your dependencies and deploy the simple python application so it is ready to serve requests. 
-In your inventory.txt file you will need your ownAWS EC2 I.P Address listed, using the ec2-user. Password will not be needed for EC2 since you are using the AWS credentials.
+In your inventory.txt file you will need your ownAWS EC2 IP Address listed, using the ec2-user. Password will not be needed for EC2 since you are using the AWS credentials.
 
 ```
 E.g
