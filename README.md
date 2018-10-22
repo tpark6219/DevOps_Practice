@@ -56,8 +56,8 @@ Currently this application redeploys when changes are made on git and commmited.
 ISSUE: There is only one build process in Jenkins that does this redeployment which is a monolithic application. 
 SOLUTION: Have two separate build processes that has one build process zip up the merge that is done to git, and the other build process to deploy the application.
 
-### Python (PENDING)
+### Python (ON GOING)
 
-Python (PENDING) will be used to create a script that will backup the database files into a local driver or S3 bucket. 
+Python (ON GOING) will be used to create a script that will backup the database files into a local driver or S3 bucket. 
 
 
